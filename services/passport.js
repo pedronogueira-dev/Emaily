@@ -19,7 +19,7 @@ passport.deserializeUser((userId,done) => {
 passport.use(new GoogleStrategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
-    callbackURL: '/auth/google/callback'
+    callbackURL: keys.googleCallbackURL
   },
   (accessToken, refreshToken, profile, done) => {
     User.findOne({ googleId: profile.id })
