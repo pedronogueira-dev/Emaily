@@ -25,6 +25,6 @@ const PORT = process.env.PORT || 5000;
 // authRoutes(app);
 require('./routes/authRoutes')(app);
 
-mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
 app.listen(PORT);
 
