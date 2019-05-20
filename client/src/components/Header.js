@@ -9,23 +9,11 @@ class Header extends Component {
       case null:
       return;
       case false:
-        return (
-            <ul id="nav-mobile" className="right">
-              <li><a href="/auth/google">Login with google</a></li>
-            </ul>
-        );
+        return <li><a href="/auth/google">Login with google</a></li>;
       default:
         return [
-            <ul id="nav-mobile" className="right">
-              <li><AddCredits /></li>
-              {
-                /*
-                <li><a href="/surveys">Add Credits</a></li>
-                <li><a href="/surveys/new">New Survey</a></li>
-                */
-              }
-              <li><a href="/api/logout">Logout</a></li>
-            </ul>
+              <li key="1"><AddCredits /></li>,
+              <li key="2"><a href="/api/logout">Logout</a></li>
         ];
     }
   }
@@ -35,9 +23,11 @@ class Header extends Component {
        <nav>
         <div className="nav-wrapper">
           <Link to= { this.props.auth? '/surveys' : '/'} className="left brand-logo">Emaily</Link>
+          <ul id="nav-mobile" className="right">
           {
             this.renderContent()
           }
+          </ul>
         </div>
       </nav>
     );
