@@ -16,8 +16,10 @@ class Header extends Component {
       default:
         return (
             <ul id="nav-mobile" className="right">
-              <li><a href="/surveys">Dashboard</a></li>
+              <li><a href="/surveys">Add Credits</a></li>
+              { /*
               <li><a href="/surveys/new">New Survey</a></li>
+              */}
               <li><a href="/api/logout">Logout</a></li>
             </ul>
         );
